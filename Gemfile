@@ -43,3 +43,18 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Adding bootstrap and will_paginate
+gem 'bootstrap-sass-rails'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
+# For markdown:
+gem 'redcarpet'
+
+# Allows for better error handling and an interactive irb to troubleshoot
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry-rails'
+end
