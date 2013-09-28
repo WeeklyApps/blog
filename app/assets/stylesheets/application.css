@@ -11,7 +11,7 @@
  *= require_self
  *= require_tree .
  */
-html, body {
+ html, body {
 	background-image:url('bg.png');
 	background-color:#cccccc;
 	padding: 0;
@@ -19,17 +19,22 @@ html, body {
 }
 
 #header-wrap {
-	background: -moz-linear-gradient(center top , #373737, #212121) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background-color: #424242;
+  position: absolute;
 	height: 100px;
 	width: 100%;
+  top: 0;
 }
 
 #header {
+  margin: 0 auto;
 	color: #FFFFFF;
 	width: 588px;
 }
 
 #wrapper {
+  position: relative;
+  top: 100px;
 	padding: 0 6px;
 	margin: 0 auto;
 	width: 588px;
