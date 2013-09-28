@@ -1,18 +1,24 @@
-<h1>Listing posts</h1>
-
-<div id="posts">
-  <% @posts.each do|post| %>
-  <div id="post">
-    <h3><%= post.title %></h3>
-    <%= simple_format post.body %>
-    <small>
-      <%= link_to 'Edit', edit_post_path(post) %> |
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </small>
+<div id="header-wrap">
+  <div id="header">
+    <h1>WeeklyApps Blog</h1>
   </div>
-  <% end %>
 </div>
 
-<br>
+<div id="wrapper">
+  <div id="posts">
+    <% @posts.each do|post| %>
+    <div id="post">
+      <h2><%= post.title %></h2>
+      <%= simple_format post.body %>
+      <small>
+        <%= link_to 'Edit', edit_post_path(post) %> |
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </small>
+    </div>
+    <% end %>
+  </div>
 
-<%= link_to 'New Post', new_post_path %>
+  <br>
+
+  <%= link_to 'New Post', new_post_path %>
+</div>
