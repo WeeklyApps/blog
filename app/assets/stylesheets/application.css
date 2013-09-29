@@ -1,6 +1,7 @@
 /*
  *= require_self
  *= require_tree .
+ *= require twitter/bootstrap
  */
  body {
 	background-image:url('bg.png');
@@ -19,10 +20,10 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #424242;
 	height: 100px;
 	width: 100%;
+  overflow: auto;
 }
 
 #header {
-  padding-top: 30px;
   margin-left: auto;
   margin-right: auto;
 	color: #FFFFFF;
@@ -31,7 +32,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #wrapper {
 	padding: 0 6px;
-  margin-top: 10px;
 	margin-left: auto;
   margin-right: auto;
 	width: 588px;

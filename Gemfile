@@ -46,6 +46,8 @@ end
 
 # Adding will_paginate
 gem 'will_paginate'
+gem 'bootstrap-sass-rails' 
+gem 'will_paginate-bootstrap' 
 
 # For markdown:
 gem 'redcarpet'
