@@ -51,6 +51,7 @@ gem 'will_paginate-bootstrap'
 
 # For markdown:
 gem 'redcarpet'
+gem 'pygments.rb'
 
 # Allows for better error handling and an interactive irb to troubleshoot
 group :development do
