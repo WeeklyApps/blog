@@ -9,7 +9,7 @@
     <% @posts.each do|post| %>
     <div id="post">
       <h2><%= post.title %></h2>
-      <%= simple_format post.body %>
+      <%= markdown post.body %>
       <small>
         <%= link_to 'Edit', edit_post_path(post) %> |
         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
