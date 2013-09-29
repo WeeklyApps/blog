@@ -44,10 +44,8 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# Adding bootstrap and will_paginate
-gem 'bootstrap-sass-rails'
+# Adding will_paginate
 gem 'will_paginate'
-gem 'will_paginate-bootstrap'
 
 # For markdown:
 gem 'redcarpet'
