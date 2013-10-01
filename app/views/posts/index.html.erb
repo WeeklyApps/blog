@@ -1,13 +1,17 @@
 <div id="wrapper">
   <div id="posts">
     <% @posts.each do|post| %>
-    <div id="post">
-      <h2><%= post.title %></h2>
-      <%= markdown post.body %>
-      <small>
-        <%= link_to 'Edit', edit_post_path(post) %> |
-        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </small>
+    <div id="post" class="panel panel-default">
+      <div class="panel-heading">
+				<h2 class="panel-title"><%= post.title %></h2>
+      </div>
+			<div class="panel-body">
+				<%= markdown post.body %>
+				<div class="btn-group pull-right">
+	        <%= link_to 'Edit', edit_post_path(post), :type => "button", :class => "btn btn-default btn-xs" %>
+	        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :type => "button", :class => "btn btn-default btn-xs" %>
+	      </div>
+			</div>
     </div>
     <% end %>
   </div>
