@@ -53,6 +53,9 @@ gem 'will_paginate-bootstrap'
 gem 'redcarpet'
 gem 'pygments.rb'
 
+# For accessing github api:
+gem 'httparty'
+
 # Allows for better error handling and an interactive irb to troubleshoot
 group :development do
   gem 'better_errors'
