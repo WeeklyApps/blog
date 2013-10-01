@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  resources :announcements
+
   root 'posts#index'
   resources :posts
 
