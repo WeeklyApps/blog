@@ -1,0 +1,19 @@
+<div class="btn-group-vertical">
+	<% if user_signed_in? %>
+		<div class="btn-group">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				Signed In
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><%= link_to('Edit Account', edit_user_registration_path) %></li>
+				<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+			</ul>
+		</div>
+		<%= link_to('New Post', new_post_path, :class => "btn btn-default") %>
+		<%= link_to('New Announcement', new_announcement_path, :class => "btn btn-default") %>
+		<%= link_to('New Project', new_project_path, :class => "btn btn-default") %>
+		<% else %>
+		<%= link_to('Login', new_user_session_path, :class => "btn btn-default")  %>  
+	<% end %>
+</div>
