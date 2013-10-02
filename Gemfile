@@ -32,18 +32,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
 # Adding will_paginate
 gem 'will_paginate'
 gem 'bootstrap-sass-rails' 
@@ -52,6 +40,9 @@ gem 'will_paginate-bootstrap'
 # For markdown:
 gem 'redcarpet'
 gem 'pygments.rb'
+
+# For authentication:
+gem 'devise'
 
 # Allows for better error handling and an interactive irb to troubleshoot
 group :development do
