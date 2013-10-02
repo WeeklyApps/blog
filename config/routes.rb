@@ -1,4 +1,13 @@
 Blog::Application.routes.draw do
+  # Changed from:
+  # devise_for :users
+  # to disable user registration but still allow editing and updating.
+  devise_for :users, :skip => [:registrations] 
+  as :user do
+    get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
+    put 'users' => 'devise/registrations#update', :as => 'user_registration'
+  end
+  
   resources :projects
 
   resources :announcements
