@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Example user creation (since registration is closed, can be done in rails console.)
+User.create!(:email => "user1@gmail.com", :password => "Pass1234")
