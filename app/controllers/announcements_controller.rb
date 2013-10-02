@@ -1,5 +1,6 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   # GET /announcements
   # GET /announcements.json
