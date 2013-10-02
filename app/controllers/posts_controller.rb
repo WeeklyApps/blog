@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    @announcements = Announcement.active
     @posts = Post.all(:order => 'created_at DESC')
   end
 

@@ -1,3 +1,6 @@
+<% @announcements.each do |announcement| %>
+	<div class="alert alert-info"><%= "Announcement: #{announcement.body}" %></div>
+<% end %>
 <div id="wrapper">
   <div id="posts">
     <% @posts.each do|post| %>
