@@ -11,8 +11,10 @@
 			<div class="panel-body">
 				<%= markdown post.body %>
 				<div class="btn-group pull-right">
-	        <%= link_to 'Edit', edit_post_path(post), :type => "button", :class => "btn btn-default btn-xs" %>
-	        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :type => "button", :class => "btn btn-default btn-xs" %>
+					<% if user_signed_in? %>
+		        <%= link_to 'Edit', edit_post_path(post), :type => "button", :class => "btn btn-default btn-xs" %>
+		        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :type => "button", :class => "btn btn-default btn-xs" %>
+					<% end %>
 	      </div>
 			</div>
 			<div class="panel-footer pull-right">by: <%= post.user.display_name %></div>
@@ -21,6 +23,7 @@
   </div>
 
   <br>
-
-  <%= link_to 'New Post', new_post_path %>
+	<% if user_signed_in? %>
+	  <%= link_to 'New Post', new_post_path %>
+	<% end %>
 </div>
