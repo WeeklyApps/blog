@@ -1,12 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-
 <h1><%= @post.title %></h1>
 <h3>by: <%= @post.user.display_name %> </h3>
 
 
 <%= markdown @post.body %>
-
+Tags: <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
 <% if user_signed_in? %>
 	<%= link_to 'Edit', edit_post_path(@post) %> |
 	<%= link_to 'Back', posts_path %>

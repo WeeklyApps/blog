@@ -7,6 +7,11 @@ class PostsController < ApplicationController
   def index
     @announcements = Announcement.active
     @posts = Post.all(:order => 'created_at DESC')
+    if params[:tag]
+        @posts = Post.tagged_with(params[:tag]).order( 'created_at DESC')
+      else
+        @posts = Post.all(:order => 'created_at DESC')
+      end
   end
 
   # GET /posts/1
@@ -71,6 +76,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :tag_list)
     end
 end

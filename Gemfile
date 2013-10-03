@@ -44,6 +44,9 @@ gem 'pygments.rb'
 # For authentication:
 gem 'devise'
 
+# For Tagging:
+gem 'acts-as-taggable-on'
+
 # Allows for better error handling and an interactive irb to troubleshoot
 group :development do
   gem 'better_errors'

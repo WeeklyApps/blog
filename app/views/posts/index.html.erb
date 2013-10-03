@@ -10,6 +10,7 @@
       </div>
 			<div class="panel-body">
 				<%= markdown post.body %>
+				Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
 				<div class="btn-group pull-right">
 					<% if user_signed_in? %>
 		        <%= link_to 'Edit', edit_post_path(post), :type => "button", :class => "btn btn-default btn-xs" %>
@@ -17,12 +18,14 @@
 					<% end %>
 	      </div>
 			</div>
-			<div class="panel-footer pull-right">by: <%= post.user.display_name %></div>
+			<div class="panel-footer">by: <%= post.user.display_name %></div>
     </div>
     <% end %>
   </div>
 
-  <br>
+  <br/>
+
+  <br/>
 	<% if user_signed_in? %>
 	  <%= link_to 'New Post', new_post_path %>
 	<% end %>
