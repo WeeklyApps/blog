@@ -10,7 +10,8 @@
       </div>
 			<div class="panel-body">
 				<%= markdown post.body %>
-				Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+				<p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+				<p>Related Articles: <%= raw post.find_related_tags(count: 5).map { |p| link_to p.title, p }.join(', ') %></p>
 				<div class="btn-group pull-right">
 					<% if user_signed_in? %>
 		        <%= link_to 'Edit', edit_post_path(post), :type => "button", :class => "btn btn-default btn-xs" %>
