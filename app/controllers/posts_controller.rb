@@ -13,6 +13,11 @@ class PostsController < ApplicationController
         @posts = Post.all(:order => 'created_at DESC')
       end
   end
+  
+  def by_month
+    @posts = Post.all
+    @post_months = @posts.group_by { |p| p.created_at.beginning_of_month }
+  end
 
   # GET /posts/1
   # GET /posts/1.json

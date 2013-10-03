@@ -13,7 +13,11 @@ Blog::Application.routes.draw do
   resources :announcements
 
   root 'posts#index'
-  resources :posts
+  resources :posts do
+    collection do
+      get 'by_month'
+    end
+  end
   
   get 'tags/:tag', to: 'posts#index', as: :tag
 
