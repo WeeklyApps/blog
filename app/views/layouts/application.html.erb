@@ -25,6 +25,11 @@
 			</div>
 			<div class="col-md-1">
 				<%= render 'layouts/devise_links' %>
+				<div id="navgroup">
+					<%= link_to('Blog Posts', posts_path, :class => "btn btn-default") %>
+					<%= link_to('Announcements', announcements_path, :class => "btn btn-default") %>
+					<%= link_to('Projects', projects_path, :class => "btn btn-default") %>
+				</div>
 			</div>
 			<div class="col-md-1">
 			</div>
