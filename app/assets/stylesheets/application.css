@@ -76,3 +76,16 @@ h1, h2, h3, h4, h5, h6 {
 #login-fields {
 	width: 200px;
 }
+
+.button-width {
+  width: 150px;
+}
+
+.btn-group-vertical {
+  width: 150px;
+}
+
+.col-md-1 {
+  display: block;
+  position: relative;
+}
