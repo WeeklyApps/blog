@@ -1,21 +1,19 @@
 <div id="wrapper">
-  <div id="posts">
-    <div id="post" class="panel panel-default">
-      <div class="panel-heading">
+	<div class="panel panel-default">
+    	<div class="panel-heading">
 			<h2 class="panel-title">Announcement</h2>
-      </div>
-			<div class="panel-body">
-				<%= markdown @announcement.body %>
-				<div class="btn-group pull-right">
-					<% if user_signed_in? %>
-		        		<%= link_to 'Edit', edit_announcement_path(@announcement), :type => "button", :class => "btn btn-default btn-xs" %>
-		        		<%= link_to 'Destroy', @announcement, method: :delete, data: { confirm: 'Are you sure?' }, :type => "button", :class => "btn btn-default btn-xs" %>
-					<% end %>
-	      		</div>
-			</div>
-			<div class="panel-footer">Posted by: <%= @announcement.user_id %></div>
-    	</div>
-  </div>
+		</div>
+		<div class="panel-body">
+			<%= markdown @announcement.body %>
+			<div class="btn-group pull-right">
+				<% if user_signed_in? %>
+		        	<%= link_to 'Edit', edit_announcement_path(@announcement), :type => "button", :class => "btn btn-default btn-xs" %>
+		        	<%= link_to 'Destroy', @announcement, method: :delete, data: { confirm: 'Are you sure?' }, :type => "button", :class => "btn btn-default btn-xs" %>
+				<% end %>
+	      	</div>
+		</div>
+		<div class="panel-footer">Posted by: <%= @announcement.user_id %></div>
+    </div>
 	<% if user_signed_in? %>
 	  <%= link_to 'New Announcement', new_announcement_path %> |
 	<% end %>

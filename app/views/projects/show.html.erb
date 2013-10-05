@@ -1,24 +1,31 @@
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @project.url %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @project.status %>
-</p>
-
-<% if user_signed_in? %>
-	<%= link_to 'Edit', edit_project_path(@project) %> |
-	<%= link_to 'Back', projects_path %>
-<% end %>
+<div id="wrapper">
+  <div class="panel panel-default">
+      <div class="panel-heading">
+      <h2 class="panel-title"><%= @project.name %></h2>
+    </div>
+    <div class="panel-body">
+      <p>
+        <strong>Description:</strong>
+        <%= markdown @project.description %>
+      </p>
+      <p>
+        <strong>URL:</strong>
+        <%= @project.url %>
+      </p>
+      <p>
+        <strong>Status:</strong>
+        <%= @project.status.humanize.titleize %>
+      </p>
+      <div class="btn-group pull-right">
+        <% if user_signed_in? %>
+              <%= link_to 'Edit', edit_project_path(@project), :type => "button", :class => "btn btn-default btn-xs" %>
+              <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, :type => "button", :class => "btn btn-default btn-xs" %>
+        <% end %>
+          </div>
+    </div>
+    </div>
+  <% if user_signed_in? %>
+    <%= link_to 'New Project', new_project_path %> |
+  <% end %>
+  <%= link_to 'Back', projects_path %>
+</div>
