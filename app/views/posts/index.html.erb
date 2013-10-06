@@ -23,7 +23,7 @@
     </div>
     <% end %>
 	</div>
-	<%= will_paginate @posts %>
+	<%= will_paginate @posts, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
 	<% if user_signed_in? %>
 	  <%= link_to 'New Post', new_post_path %>
 	<% end %>
