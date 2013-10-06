@@ -20,7 +20,7 @@
         <td><%= link_to project.name, project %></td>
         <td><%= project.description %></td>
         <td><a href="<%= project.url %>"><%= project.url %></a></td>
-        <td><%= project.status %></td>
+        <td><%= project.status.humanize.titleize %></td>
 				<% if user_signed_in? %>
 	        <td><%= link_to 'Edit', edit_project_path(project) %></td>
 	        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
