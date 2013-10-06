@@ -16,7 +16,61 @@
     <%= f.text_field :title, :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :body %><br>
+    <%= f.label :body %>
+    <a href="#formatting" class="nav-toggle">Formatting Help</a>
+    <div id="formatting" style="display:none">
+      <h1>Syntax</h1>
+
+      WeeklyApps is using <a href="http://daringfireball.net/projects/markdown/" target="_blank" >Markdown</a> to format blog posts and comments.
+
+      <table border="1" id="syntax">
+        <tr>
+          <th>What you type:</th>
+          <th>What you see:</th>
+        </tr>
+        <tr>
+          <td>*italics*</td>
+          <td><%= markdown "*italics*" %></td>
+        </tr>
+        <tr>
+          <td>**bold**</td>
+          <td><%= markdown "**bold**" %></td>
+        </tr>
+        <tr>
+          <td>[google](http://www.google.com/)</td>
+          <td><%= markdown "[google](https://www.google.com/)" %></td>
+        </tr>
+        <tr>
+          <td>* item 1 <br />
+            * item 2 <br />
+            * item 3
+          </td>
+          <td>
+            <%= markdown "* item 1 \n* item 2 \n* item 3" %>
+          </td>
+        </tr>
+        <tr>
+          <td>~~strikethrough~~</td>
+          <td><%= markdown "~~strikethrough~~" %></td>
+        </tr>
+        <tr>
+          <td>super^script</td>
+          <td><%= markdown "super^script"%></td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <p>Lines starting with four spaces are treated like code:</p>
+            <span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>if 1 * 2 < 3:<br />
+            <span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>print "hello, world!"
+          </td>
+          <td>
+            <p>Lines starting with four spaces are treated like code:</p>
+            <%= markdown "    if 1 * 2 < 3: \n        print \"hello world!\""%>
+          </td>
+        </tr>
+      </table> 
+    </div>
+    <br />
     <%= f.text_area :body, :class => "form-control", :rows => "12" %>
   </div>
 	<div class="form-group">
