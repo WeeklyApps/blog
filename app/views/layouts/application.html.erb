@@ -13,7 +13,15 @@
 		  </div>
 		</div>
 		<div class="row">
-		  <div class="col-md-2"></div>
+		  <div class="col-md-1">
+				<div id="navgroup">
+				<%= raw Post.tag_cloud.map { |t| link_to(tag_path(t.name), :class => "btn btn-default button-width") do
+						raw (t.name + "<span class=\"badge pull-right\">#{t.count}</span>")
+					end 
+					}.join() %>
+				</div>
+		  </div>
+		  <div class="col-md-1"></div>
 		  <div class="col-md-8">
 				<% if notice %>
 					<div class="alert alert-success"><%= notice %></div>
