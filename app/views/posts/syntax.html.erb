@@ -9,15 +9,15 @@ WeeklyApps is using <a href="http://daringfireball.net/projects/markdown/" targe
 	</tr>
 	<tr>
 		<td>*italics*</td>
-		<td><i>italics</i></td>
+		<td><%= markdown "*italics*" %></td>
 	</tr>
 	<tr>
 		<td>**bold**</td>
-		<td><strong>bold</strong></td>
+		<td><%= markdown "**bold**" %></td>
 	</tr>
 	<tr>
 		<td>[google](http://www.google.com/)</td>
-		<td><a href="https://www.google.com/" target="_blank" >google</a></td>
+		<td><%= markdown "[google](https://www.google.com/)" %></td>
 	</tr>
 	<tr>
 		<td>* item 1 <br />
@@ -25,20 +25,16 @@ WeeklyApps is using <a href="http://daringfireball.net/projects/markdown/" targe
 			* item 3
 		</td>
 		<td>
-			<ul>
-				<li>item 1
-				<li>item 2
-				<li>item 3	
-			</ul>
+			<%= markdown "* item 1 \n* item 2 \n* item 3" %>
 		</td>
 	</tr>
 	<tr>
 		<td>~~strikethrough~~</td>
-		<td><strike>strikethrough</strike></td>
+		<td><%= markdown "~~strikethrough~~" %></td>
 	</tr>
 	<tr>
 		<td>super^script</td>
-		<td>super<sup>script</sup></td>
+		<td><%= markdown "super^script"%></td>
 	</tr>
 	<tr>
 		<td valign="top">
@@ -48,9 +44,8 @@ WeeklyApps is using <a href="http://daringfireball.net/projects/markdown/" targe
 		</td>
 		<td>
 			<p>Lines starting with four spaces are treated like code:</p>
-			<pre>if 1 * 2 < 3:
-    print "hello, world!"
-			</pre>
+			<%= markdown "    if 1 * 2 < 3: \n
+		print \"hello world!\""%>
 		</td>
 	</tr>
 </table> 
