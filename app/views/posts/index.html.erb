@@ -20,7 +20,7 @@
 				<% end %>
 	      	</div>
 		</div>
-		<div class="panel-footer">by: <%= post.user.display_name %></div>
+		<div class="panel-footer">by: <%= link_to post.user.display_name, user_path(post.user_id) %></div>
     </div>
     <% end %>
 	</div>

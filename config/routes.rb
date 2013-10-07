@@ -20,7 +20,7 @@ Blog::Application.routes.draw do
   end
   
   get 'tags/:tag', to: 'posts#index', as: :tag
-  get 'users/:user_id', to: 'posts#index', as: :user_id
+  get 'users/:user_id', to: 'posts#index', as: :user
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
