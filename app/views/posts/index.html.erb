@@ -6,8 +6,8 @@
     <% @posts.each do|post| %>
     <div id="post" class="panel panel-default">
     	<div class="panel-heading">
-			<h2 class="panel-title"><%= post.title %> <small class="created-at">Posted: <%= post.created_at.strftime("%d %b. %Y") %>
-			 at <%= post.created_at.strftime("%I:%M%p") %></small></h2>
+			<%= link_to post.title, post %> <small class="created-at">Posted: <%= post.created_at.strftime("%d %b. %Y") %>
+			 at <%= post.created_at.strftime("%I:%M%p") %></small>
 		</div>
 		<div class="panel-body">
 			<%= markdown post.body %>
