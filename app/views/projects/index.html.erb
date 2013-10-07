@@ -30,6 +30,8 @@
   </tbody>
 </table>
 
+<%= will_paginate @projects, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
+
 <% if user_signed_in? %>
 	<%= link_to 'New Project', new_project_path %>
 <% end %>

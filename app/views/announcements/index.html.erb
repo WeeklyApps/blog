@@ -28,6 +28,8 @@
   </tbody>
 </table>
 
+<%= will_paginate @announcements, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
+
 <% if user_signed_in? %>
 	<%= link_to 'New Announcement', new_announcement_path %>
 <% end %>
