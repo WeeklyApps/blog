@@ -5,11 +5,16 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @announcements = Announcement.active
+    if params[:user_id]
+      @posts = Post.where(user_id: params[:user_id])
+    else
+      @posts = Post.all
+    end
     if params[:tag]
-        @posts = Post.tagged_with(params[:tag]).page(params[:page]).order( 'created_at DESC')
-      else
-        @posts = Post.page(params[:page]).order('created_at DESC')
-      end
+      @posts = @posts.tagged_with(params[:tag]).page(params[:page]).order( 'created_at DESC')
+    else
+      @posts = @posts.page(params[:page]).order('created_at DESC')
+    end
   end
   
   def by_month
