@@ -112,3 +112,21 @@ h1, h2, h3, h4, h5, h6 {
 .spaces {
   background-color: #C0C0C0;
 }
+
+#tags {
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: #C7C7C7;
+  width: 150px;
+  min-height: 400px;
+  padding: 2px;
+  background-color: #FFFFFF;
+}
+
+#tags p {
+  text-align: center;
+}
+
+#tags hr {
+  color: #D1D1E3;
+}

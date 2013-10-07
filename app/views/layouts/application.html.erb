@@ -14,12 +14,7 @@
 		</div>
 		<div class="row">
 		  <div class="col-md-1">
-				<div id="navgroup">
-				<%= raw Post.tag_cloud.map { |t| link_to(tag_path(t.name), :class => "btn btn-default button-width") do
-						raw (t.name + "<span class=\"badge pull-right\">#{t.count}</span>")
-					end 
-					}.join() %>
-				</div>
+
 		  </div>
 		  <div class="col-md-1"></div>
 		  <div class="col-md-8">
@@ -37,6 +32,14 @@
 					<%= link_to('Blog Posts', posts_path, :class => "btn btn-default button-width") %>
 					<%= link_to('Announcements', announcements_path, :class => "btn btn-default button-width") %>
 					<%= link_to('Projects', projects_path, :class => "btn btn-default button-width") %>
+				</div>
+				<div id ="tags">
+					<p><strong><u>Posts by tags:</u></strong></p>
+					<div id="tag-list">
+						<%= raw Post.tag_cloud.map { |t| link_to(tag_path(t.name), :class => "tag-list") do
+						raw (t.name + "<span class=\"badge pull-right\">#{t.count}</span><br />")
+						end }.join() %>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-1">
