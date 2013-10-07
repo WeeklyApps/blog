@@ -12,7 +12,7 @@
 				<% end %>
 	      	</div>
 		</div>
-		<div class="panel-footer">Posted by: <%= @announcement.user_id %></div>
+		<div class="panel-footer">Posted by: <%= @announcement.user.display_name %></div>
     </div>
 	<% if user_signed_in? %>
 	  <%= link_to 'New Announcement', new_announcement_path %> |
