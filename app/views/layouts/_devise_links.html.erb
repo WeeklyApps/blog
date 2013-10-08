@@ -13,7 +13,10 @@
 		<%= link_to('New Post', new_post_path, :class => "btn btn-default") %>
 		<%= link_to('New Announcement', new_announcement_path, :class => "btn btn-default") %>
 		<%= link_to('New Project', new_project_path, :class => "btn btn-default") %>
-		<% else %>
+	<% else %>
 		<%= link_to('Login', new_user_session_path, :class => "btn btn-default")  %>  
 	<% end %>
+	<%= link_to('Blog Posts', posts_path, :class => "btn btn-default button-width") %>
+	<%= link_to('Announcements', announcements_path, :class => "btn btn-default button-width") %>
+	<%= link_to('Projects', projects_path, :class => "btn btn-default button-width") %>
 </div>
