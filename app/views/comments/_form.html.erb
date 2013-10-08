@@ -1,19 +1,36 @@
-<%= form_for [@commentable, @comment] do |f| %>
-  <% if @comment.errors.any? %>
-    <div class="error_messages">
-      <h2>Please correct the following errors.</h2>
-      <ul>
-      <% @comment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="panel panel-default">
+	<div class="panel-body">
+		<%= form_for [@commentable, @comment] do |f| %>
+		  <% if @comment.errors.any? %>
+		    <div class="error_messages">
+		      <h2>Please correct the following errors.</h2>
+		      <ul>
+		      <% @comment.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
 
-  <div class="field">
-    <%= f.text_area :content, rows: 8 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+			
+			<div class="form-group">
+		    <%= f.label :commenter %><br>
+				<% if !user_signed_in? %>
+		    	<%= f.text_field :commenter, :class => "form-control" %>
+				<% else %>
+					<%= f.text_field :commenter, {:class => "form-control", :value => current_user.display_name} %>
+				<% end %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.label :content, "Comment" %>
+		    <a href="#formatting" class="nav-toggle">Formatting Help</a>
+		    <%= render partial: "posts/syntax" %>
+		    <br />
+		    <%= f.text_area :content, :class => "form-control", :rows => "12" %>
+		  </div>
+		  <div class="actions">
+		    <%= f.submit "Create Comment", :class => "btn btn-default" %>
+		  </div>
+		<% end %>
+	</div>
+</div>

@@ -1,7 +1,12 @@
 <div id="comments">
   <% @comments.each do |comment| %>
-    <div class="comment">
-      <%= simple_format comment.content %>
-    </div>
+    <div class="panel panel-default">
+			<div class="panel-body">
+      	<%= markdown comment.content %>
+    	</div>
+			<div class="panel-footer">
+				by: <%= comment.commenter%>
+			</div>
+		</div>
   <% end %>
 </div>

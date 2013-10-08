@@ -19,7 +19,9 @@
 			<div class="panel-footer">by: <%= link_to @post.user.display_name, user_path(@post.user_id) %></div>
 	    </div>
 	</div>
-	<%= render "comments/comments"%>
-	<%= render "comments/form"%>
+	<div class="well">
+		<%= render "comments/comments"%>
+		<%= render "comments/form"%>
+	</div>
 	<%= link_to('All Blog Posts', posts_path) %>
 </div>
