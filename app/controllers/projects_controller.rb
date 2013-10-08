@@ -10,6 +10,9 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @commentable = @project
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   # GET /projects/new

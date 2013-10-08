@@ -14,6 +14,8 @@
 		</div>
 		<div class="panel-footer">Posted by: <%= @announcement.user.display_name %></div>
     </div>
+		<%= render "comments/comments"%>
+		<%= render "comments/form"%>
 	<% if user_signed_in? %>
 	  <%= link_to 'New Announcement', new_announcement_path %> |
 	<% end %>

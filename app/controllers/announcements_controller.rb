@@ -10,6 +10,9 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/1
   # GET /announcements/1.json
   def show
+    @commentable = @announcement
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   # GET /announcements/new
