@@ -13,13 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require twitter/bootstrap
 
-$(document).ready(function(){
+var do_on_load = (function(){
   var $content = $(".formatting").hide();
   $(".toggle").on("click", function(e){
     $(this).toggleClass("expanded");
     $content.slideToggle();
   });
 });
+
+$(document).ready(do_on_load)
+$(document).on('page:load', do_on_load)
