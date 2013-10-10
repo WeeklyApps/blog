@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20131008041929) do
     t.string   "name"
     t.text     "description"
     t.string   "url"
+    t.string   "github_url"
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
