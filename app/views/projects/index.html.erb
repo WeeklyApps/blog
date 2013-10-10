@@ -1,36 +1,26 @@
-<h1>Listing projects</h1>
+<h1>Projects</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Url</th>
-      <th>Status</th>
-			<% if user_signed_in? %>
-	      <th></th>
-	      <th></th>
-			<% end %>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= link_to project.name, project %></td>
-        <td><%= project.description %></td>
-        <td><a href="<%= project.url %>"><%= project.url %></a></td>
-        <td><%= project.status.humanize.titleize %></td>
+<% @projects.each do |status| %>
+<div class="panel panel-default">
+	<div class="panel-heading"><%= status[0].titleize %></div>
+	<div class="panel-body">
+		<% status[1].each do |project| %>
+      <div class=well>
+        <h3><%= link_to project.name, project %></h3>
+        <%= markdown project.description %>
+        <%= link_to_if(project.url?, project.url, project.url)%>
+        <%= link_to_if(project.github_url?, project.github_url, project.github_url)%>
 				<% if user_signed_in? %>
-	        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-	        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	        <div class="btn-group pull-right">
+						<%= link_to 'Edit', edit_project_path(project), :class => "btn btn-default btn-xs" %>
+						<%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-xs" %>
+					</div>
 				<% end %>
-      </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<%= will_paginate @projects, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
+	</div>
+</div>
+<% end %>
 
 <% if user_signed_in? %>
 	<%= link_to 'New Project', new_project_path %>

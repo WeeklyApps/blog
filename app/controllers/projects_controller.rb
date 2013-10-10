@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.page(params[:page])
+    @projects = Project.all.order(:name).group_by {|p| p.status }
   end
 
   # GET /projects/1
