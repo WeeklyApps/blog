@@ -14,7 +14,7 @@
 
 			
 			<div class="form-group">
-		    <%= f.label :commenter %><br>
+		    <%= f.label :commenter, "Your Name" %> <small>(Will default to "Anonymous" if left blank)</small><br>
 				<% if !user_signed_in? %>
 		    	<%= f.text_field :commenter, :class => "form-control" %>
 				<% else %>
@@ -28,7 +28,7 @@
 		    <%= f.text_area :content, :class => "form-control", :rows => "12" %>
 		  </div>
 		  <div class="actions">
-		    <%= f.submit "Create Comment", :class => "btn btn-default" %>
+		    <%= f.submit "Create Comment", :class => "btn btn-primary" %>
 		  </div>
 		<% end %>
 	</div>
