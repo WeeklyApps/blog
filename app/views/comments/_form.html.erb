@@ -15,11 +15,7 @@
 			
 			<div class="form-group">
 		    <%= f.label :commenter, "Your Name" %> <small>(Will default to "Anonymous" if left blank)</small><br>
-				<% if !user_signed_in? %>
-		    	<%= f.text_field :commenter, :class => "form-control" %>
-				<% else %>
-					<%= f.text_field :commenter, {:class => "form-control", :value => current_user.display_name} %>
-				<% end %>
+	    	<%= f.text_field :commenter, :class => "form-control" %>
 		  </div>
 		  <div class="form-group">
 		    <%= f.label :content, "Comment" %>

@@ -11,6 +11,9 @@ class CommentsController < ApplicationController
   
   def create
     @comment = @commentable.comments.new(comment_params)
+    if user_signed_in?
+      @comment.user = current_user
+    end
     if @comment.save
       redirect_to @commentable, notice: "Comment created."
     else

@@ -5,7 +5,7 @@
       	<%= markdown comment.content %>
     	</div>
 			<div class="panel-footer">
-				by: <%= comment.commenter? ? comment.commenter : "Anonymous" %>
+				by: <%= comment.user_id? ? link_to("Registered User: #{comment.user.display_name}", comment.user) : (comment.commenter? ? comment.commenter : "Anonymous") %>
 			</div>
 		</div>
   <% end %>
