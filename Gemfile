@@ -48,6 +48,8 @@ gem 'devise'
 # For Tagging:
 gem 'acts-as-taggable-on'
 
+gem 'american_date'
+
 # Allows for better error handling and an interactive irb to troubleshoot
 group :development do
   gem 'better_errors'
