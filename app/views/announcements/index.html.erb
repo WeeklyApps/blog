@@ -17,7 +17,7 @@
     <% @announcements.each do |announcement| %>
       <tr>
         <td><%= link_to announcement.body, announcement %></td>
-        <td><%= announcement.end_date %></td>
+        <td><%= announcement.end_date.strftime("%m/%d/%Y") %></td>
         <td><%= announcement.user.display_name %></td>
         <% if user_signed_in? %>
 					<td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>

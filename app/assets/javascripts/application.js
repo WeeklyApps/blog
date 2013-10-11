@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require twitter/bootstrap
+//= require jquery.ui.all
 
 var do_on_load = (function(){
   var $content = $(".formatting").hide();
@@ -21,6 +22,7 @@ var do_on_load = (function(){
     $(this).toggleClass("expanded");
     $content.slideToggle();
   });
+  $('.datepicker').datepicker();
 });
 
 $(document).ready(do_on_load)
