@@ -6,8 +6,8 @@
     <% @posts.each do|post| %>
     <div id="post" class="panel panel-default">
     	<div class="panel-heading">
-			<%= link_to post.title, post %> <small class="created-at">Posted: <%= post.created_at.strftime("%d %b. %Y") %>
-			 at <%= post.created_at.strftime("%I:%M%p") %></small>
+			<%= link_to post.title, post %> <div class="created-at">Posted: <%= post.created_at.strftime("%d %b. %Y") %>
+			 at <%= post.created_at.strftime("%I:%M%p") %></div>
 		</div>
 		<div class="panel-body">
 			<%= markdown post.body %>
@@ -20,7 +20,7 @@
 				<% end %>
 	      	</div>
 		</div>
-		<div class="panel-footer">by: <%= link_to post.user.display_name, user_path(post.user_id) %></div>
+		<div class="panel-footer">by: <%= link_to post.user.display_name, user_path(post.user_id) %> <div class="filter-user-link-text"> (Click to filter posts by this user)</div></div>
     </div>
     <% end %>
 	</div>

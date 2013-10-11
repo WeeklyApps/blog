@@ -133,6 +133,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .created-at {
+  display: inline-block;
+  font-size: 10px;
+}
+
+.filter-user-link-text {
+  display: inline-block;
   font-size: 10px;
 }
 
