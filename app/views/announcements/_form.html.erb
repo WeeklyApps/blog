@@ -17,7 +17,7 @@
   </div>
   <div class="form-group" id="announcement-date">
     <%= f.label :end_date, "Expiration Date" %><br>
-    <%= f.text_field :end_date, :class => "form-control datepicker" %>
+    <%= f.text_field :end_date, :class => "form-control datepicker", :value => (@announcement.end_date.blank? ? '' : @announcement.end_date.strftime("%m/%d/%Y")), :readonly => true %>
   </div>
 	<%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="actions">
