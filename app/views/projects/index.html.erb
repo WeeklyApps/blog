@@ -2,14 +2,14 @@
 
 <% @projects.each do |status| %>
 <div class="panel panel-default">
-	<div class="panel-heading"><%= status[0].titleize %></div>
+	<div class="panel-heading">Status: <%= status[0].titleize %></div>
 	<div class="panel-body">
 		<% status[1].each do |project| %>
       <div class=well>
         <h3><%= link_to project.name, project %></h3>
         <%= markdown project.description %>
-        <%= link_to_if(project.url?, project.url, project.url)%>
-        <%= link_to_if(project.github_url?, project.github_url, project.github_url)%>
+       	<strong>Project URL:</strong> <%= link_to_if(project.url?, project.url, project.url)%><br />
+        <strong>GitHub URL:</strong> <%= link_to_if(project.github_url?, project.github_url, project.github_url)%>
 				<% if user_signed_in? %>
 	        <div class="btn-group pull-right">
 						<%= link_to 'Edit', edit_project_path(project), :class => "btn btn-default btn-xs" %>
