@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @announcements = Announcement.where('end_date >= ?', Date.today)
+    @announcements = Announcement.active
     if params[:user_id]
       @posts = Post.where(user_id: params[:user_id])
     else
