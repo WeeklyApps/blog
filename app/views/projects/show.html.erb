@@ -8,14 +8,18 @@
         <strong>Description:</strong>
         <%= markdown @project.description %>
       </p>
-      <p>
-        <strong>URL:</strong>
-        <%= @project.url %>
-      </p>
-			<p>
-        <strong>Github URL:</strong>
-        <%= @project.github_url %>
-      </p>
+      <% if @project.url? %>
+        <p>
+          <strong>URL:</strong>
+          <%= @project.url %>
+        </p>
+      <% end %>
+      <% if @project.github_url? %>
+  			<p>
+          <strong>Github URL:</strong>
+          <%= @project.github_url %>
+        </p>
+      <% end %>
       <p>
         <strong>Status:</strong>
         <%= @project.status.humanize.titleize %>
