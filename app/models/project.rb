@@ -3,9 +3,6 @@ class Project < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   validates :name, presence: true
-  validates :description, presence: true
-  validates :url, presence: true
-  validates :github_url, presence: true
-  
+  validates :description, presence: true  
 
 end
