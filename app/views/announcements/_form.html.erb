@@ -1,6 +1,6 @@
 <%= form_for(@announcement) do |f| %>
   <% if @announcement.errors.any? %>
-    <div id="error_explanation">
+    <div class="alert alert-danger">
       <h2><%= pluralize(@announcement.errors.count, "error") %> prohibited this announcement from being saved:</h2>
 
       <ul>
