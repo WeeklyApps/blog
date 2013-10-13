@@ -1,10 +1,10 @@
 <h1>Projects</h1>
 
-<% @projects.each do |status| %>
+<% @projects.each do |status, projects| %>
 <div class="panel panel-default">
-	<div class="panel-heading"><%= status[0].titleize %></div>
+	<div class="panel-heading"><%= status.to_s.titleize %></div>
 	<div class="panel-body">
-		<% status[1].each do |project| %>
+		<% projects.each do |project| %>
       <div class=well>
         <h3><%= link_to project.name, project %></h3>
         <%= markdown project.description %>

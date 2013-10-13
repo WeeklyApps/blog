@@ -4,7 +4,10 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all.order(:name).group_by {|p| p.status }
+    @projects = Hash.new
+    @projects[:complete] = Project.where(:status => "Complete").order(:name)
+    @projects[:in_progress] = Project.where(:status => "In_Progress").order(:name)
+    @projects[:not_started] = Project.where(:status => "Not_Started").order(:name)
   end
 
   # GET /projects/1
