@@ -31,7 +31,7 @@
   </div>
   <div class="form-group" id="project-status">
     <%= f.label :status %><br>
-    <%= f.collection_select :status, %w[Complete In_Progress Not_Started], :to_s, :titleize,{}, {:class => "form-control"} %>
+    <%= f.collection_select :status, %w[Not_Started In_Progress Complete], :to_s, :titleize,{}, {:class => "form-control"} %>
   </div>
   <div class="actions">
     <%= f.submit "Submit", :class => "btn btn-default" %>
