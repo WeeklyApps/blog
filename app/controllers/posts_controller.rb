@@ -17,6 +17,17 @@ class PostsController < ApplicationController
     end
   end
   
+  def feed
+    @title = "Weekly Apps Blog Posts"
+    @posts = Post.order("created_at desc")
+    @updated = @posts.first.updated_at unless @posts.empty?
+    respond_to do |format|
+      format.atom { render :layout => false }
+      # we want the RSS feed to redirect permanently to the ATOM feed
+      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
+    end
+  end
+  
   def by_month
     @posts = Post.all
     @post_months = @posts.group_by { |p| p.created_at.beginning_of_month }

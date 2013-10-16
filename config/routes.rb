@@ -25,6 +25,10 @@ Blog::Application.routes.draw do
     end
   end
   
+  get '/feed' => 'posts#feed',
+        :as => :feed,
+        :defaults => { :format => 'atom' }
+  
   get 'tags/:tag', to: 'posts#index', as: :tag
   get 'users/:user_id', to: 'posts#index', as: :user
 end
