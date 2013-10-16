@@ -31,4 +31,6 @@ Blog::Application.routes.draw do
   
   get 'tags/:tag', to: 'posts#index', as: :tag
   get 'users/:user_id', to: 'posts#index', as: :user
+
+  get '/about' => "info#about"
 end
