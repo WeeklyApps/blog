@@ -20,7 +20,22 @@
 				<% end %>
 	      	</div>
 		</div>
-		<div class="panel-footer">by: <%= link_to post.user.display_name, user_path(post.user_id) %> <div class="filter-user-link-text"> (Click to filter posts by this user)</div></div>
+		<div class="panel-footer">
+			by: <%= link_to post.user.display_name, user_path(post.user_id) %> 
+			<div class="filter-user-link-text"> 
+				 (Click to filter posts by this user)
+			</div>
+			<% if post.comments.count == 1 %>
+				<div class="post-comment-count">
+					<%= link_to "#{post.comments.count} comment", post %>
+				</div>
+			<% elsif post.comments.count > 1 %>
+				<div class="post-comment-count">
+					<%= link_to "#{post.comments.count} comments", post %>
+				</div>
+			<% end %>
+
+		</div>
     </div>
     <% end %>
 	</div>
