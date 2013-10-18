@@ -6,6 +6,7 @@
       <th>Announcement</th>
       <th>End date</th>
       <th>User</th>
+			<th></th>
 			<% if user_signed_in? %>
 	      <th></th>
 	      <th></th>
@@ -16,10 +17,11 @@
   <tbody>
     <% @announcements.each do |announcement| %>
       <tr>
-        <td><%= link_to announcement.body, announcement %></td>
+        <td><%= markdown announcement.body %></td>
         <td><%= announcement.end_date.strftime("%m/%d/%Y") %></td>
         <td><%= announcement.user.display_name %></td>
-        <% if user_signed_in? %>
+        <td><%= link_to "view", announcement %></td>
+				<% if user_signed_in? %>
 					<td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
         	<td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       	<% end %>
