@@ -1,5 +1,5 @@
 <% @announcements.each do |announcement| %>
-	<div class="alert alert-info"><%= "Announcement: #{announcement.body}" %></div>
+	<div class="alert alert-info"><%= markdown announcement.getText %></div>
 <% end %>
 <div id="wrapper">
 	<div id="posts">

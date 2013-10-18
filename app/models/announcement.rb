@@ -8,4 +8,8 @@ class Announcement < ActiveRecord::Base
   
   self.per_page = 15
   
+  def getText
+    return "Announcement: " + body
+  end
+  
 end
