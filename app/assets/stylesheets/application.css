@@ -154,3 +154,8 @@ h1, h2, h3, h4, h5, h6 {
 #comment_commenter {
   width: 200px;
 }
+
+.post-comment-count {
+  display: inline;
+  margin-left: 10px;
+}
