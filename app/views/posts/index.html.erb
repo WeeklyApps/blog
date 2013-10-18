@@ -25,13 +25,9 @@
 			<div class="filter-user-link-text"> 
 				 (Click to filter posts by this user)
 			</div>
-			<% if post.comments.count == 1 %>
+			<% if post.comments.count > 0 %>
 				<div class="post-comment-count">
-					<%= link_to "#{post.comments.count} comment", post %>
-				</div>
-			<% elsif post.comments.count > 1 %>
-				<div class="post-comment-count">
-					<%= link_to "#{post.comments.count} comments", post %>
+					<%= link_to pluralize(post.comments.count, 'comment'), post %>
 				</div>
 			<% end %>
 
