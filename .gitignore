@@ -18,3 +18,4 @@ scaffolds.css.scss
 .project
 unicorn.rb
 init.sh
+secret_token.rb
