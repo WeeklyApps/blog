@@ -159,3 +159,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline;
   margin-left: 10px;
 }
+
+.alert-info p{
+  color: #000000;
+}
